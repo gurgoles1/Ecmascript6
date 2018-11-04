@@ -1,0 +1,34 @@
+Installed the different babel packages for compatability with
+several different browsers. Babel preset library
+is used so your plugins also is made compatible for
+several browsers. The scripts section is then used
+to to run npm run babel and npm start commads.
+The npm start starts a http-server with the plugin for
+same name. The plugin is used to run in http protocol
+and not just static file protocol.
+npm babel takes a file and then bundles the backwards
+compability code in another.
+
+Webpack: Ett bra verktyg för att bundla och minifiera css och javascript filer.
+Gör att man då slipper bry sig om i vilken ordning och när man laddar in css och
+js filer och beroenden mellan dem. När man använder webpack så behöver man
+hantera js dependencies på så sätt att där man behöver vissa saker från
+andra filer måste man exportera och importera dessa. Importering och exportering
+är ES6 men det behövs inte babel för just det funktionen, till skillnad från
+allt annat som är ES6. -p till webpack kommandot kör webpack i produktions läge,
+vilket bland annat dessutom minifierar koden. Fyra core koncept för webpack,
+input (filer som ska tas in), module loaders (sådant som transformerar koden),
+plugins (transformering av koden av andra dependencies), output (filer som kommer
+ut från transformering).
+
+Webpack config fil: Config fil för webpack är något som behövs när inte vill
+sätta upp allt i package.json (vanligare för större projekt).
+Strukturen på denna måste vara en module.exports av ett javascript objekt. Sedan
+också en entrypoint, som kan vara en eller flera filer eller mappar.
+
+När man kör html, css, js på filsystemet (file://) så laddas inte filerna via http,
+utan från filsystemet direkt. Detta gör det inte produktions likt vilket såklart
+är något man vill uppnå utvecklings mässigt. Man kan då använda en webserver
+från webpack som är en node server med lite extra features. Node http-server
+är ett annat sätt att köra en http server. Webpack dev server kör med webpack
+config filen lokalt automatiskt.
